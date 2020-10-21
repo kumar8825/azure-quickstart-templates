@@ -11,6 +11,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '101-webapp-linux-managed-mysql'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
